@@ -5,13 +5,15 @@ const env = process.env.NODE_ENV || 'development'
 const isDevelopment = env === 'development'
 
 module.exports = {
+  mode: env,
   target: 'node',
   devtool: isDevelopment ? 'source-map' : false,
   entry: {
-    server: './src/server.ts',
+    'public/js/client': './src/client.ts',
+    'dist/server': './src/server.ts',
   },
   output: {
-    path: path.join(__dirname, './dist'),
+    path: __dirname,
     filename: '[name].bundle.js',
   },
   resolve: {

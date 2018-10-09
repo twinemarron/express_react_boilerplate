@@ -1,7 +1,12 @@
 import * as express from 'express'
+import router from './routes/serverRoutes'
+console.log('router: ', router)
 
 const app = express()
-const PORT = 3000
+
+const PORT: number = 3000
+
+app.use(express.static('public'))
 
 app.listen(PORT, (): void => {
   global.console.log(`app listening @ ${PORT}`)
