@@ -30,6 +30,7 @@
     "ts-loader": "^5.2.1"
   },
   "devDependencies": {
+    "@types/react": "^16.4.16",
     "awesome-typescript-loader": "^5.2.1",
     "typescript": "^3.1.1",
     "webpack": "^4.20.2",

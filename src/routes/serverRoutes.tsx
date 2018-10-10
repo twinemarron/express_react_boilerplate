@@ -1,6 +1,6 @@
 import * as express from 'express'
 
-import React from 'react'
+import * as React from 'react'
 import ReactDOMServer from 'react-dom/server'
 
 import { StaticRouter } from 'react-router-dom'
@@ -12,11 +12,10 @@ const router = express.Router()
 
 router.get('*', (req, res) => {
   let context = {}
-
   ReactDOMServer.renderToNodeStream(
-    <StaticRouter location={req.url} context={context} >
+    <StaticRouter location={req.url} context={context}>
       {renderRoutes(routes)}
-    </StaticRouter >
+    </StaticRouter>
   ).pipe(res)
 })
 
