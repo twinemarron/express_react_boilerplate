@@ -1,7 +1,7 @@
 import * as express from 'express'
 
 import * as React from 'react'
-import ReactDOMServer from 'react-dom/server'
+import * as ReactDOMServer from 'react-dom/server'
 
 import { StaticRouter } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'

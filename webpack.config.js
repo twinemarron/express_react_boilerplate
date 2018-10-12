@@ -9,7 +9,7 @@ module.exports = {
   target: 'node',
   devtool: isDevelopment ? 'source-map' : false,
   entry: {
-    'public/js/client': './src/client.ts',
+    'public/js/client': './src/client.tsx',
     'dist/server': './src/server.ts',
   },
   output: {
