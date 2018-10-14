@@ -1,33 +1,18 @@
 import { combineReducers } from 'redux'
 
-// const reducerA = (state = 'hoge', action) => {
-//   switch (action.type) {
-//     case 'ACTION_X':
-//       return 'foobar';
-//   }
-//   return state;
-// }
-// const reducerB = (state = { flag: false, items: [] }, action) => {
-//   switch (action.type) {
-//     case 'ACTION_Y':
-//       return Object.assign({}, state, { flag: true });
-//   }
-//   return state;
-// }
-// const reducerC = () => {
-//   switch (action.type) {
-//     case '':
-//       return Object.assign({}, state);
-//   }
-//   return state;
-// }
-//
-//
-// const reducer = combineReducers({
-//   // reducerA,
-//   // reducerB,
-//   reducerC,
-// )}
+const reducerC = () => {
+  const state = {}
+  const action = ''
+  // switch (action.type) {
+  switch (action) {
+    case '':
+      return Object.assign({}, state);
+  }
+  return state;
+}
 
-const reducer = null
+const reducer = combineReducers({
+  reducerC,
+})
+
 export default reducer
