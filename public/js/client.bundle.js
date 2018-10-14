@@ -98,12 +98,8 @@
 exports.__esModule = true;
 var React = __webpack_require__(/*! react */ "react");
 var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
-var react_redux_1 = __webpack_require__(/*! react-redux */ "react-redux");
-var configureStore = __webpack_require__(/*! ./store/store */ "./src/store/store.ts");
-var routes = __webpack_require__(/*! ./routes/routes */ "./src/routes/routes.ts");
-var state = configureStore();
-ReactDOM.hydrate(React.createElement(react_redux_1.Provider, { store: store },
-    React.createElement(BrowserRouter, null, renderRoutes(routes))), document.getElementById('app'));
+var App = __webpack_require__(/*! ./containers/App */ "./src/containers/App.tsx");
+ReactDOM.hydrate(React.createElement(App, null), document.getElementById('app'));
 
 
 /***/ }),
@@ -127,108 +123,6 @@ exports["default"] = App;
 
 /***/ }),
 
-/***/ "./src/containers/Html.tsx":
-/*!*********************************!*\
-  !*** ./src/containers/Html.tsx ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
-var react_1 = __webpack_require__(/*! react */ "react");
-var react_router_config_1 = __webpack_require__(/*! react-router-config */ "react-router-config");
-var Html = function (props) {
-    return (react_1["default"].createElement("html", null,
-        react_1["default"].createElement("head", null,
-            react_1["default"].createElement("title", null, "App")),
-        react_1["default"].createElement("body", null,
-            react_1["default"].createElement("div", { id: "app" }, react_router_config_1.renderRoutes(props.route.routes)),
-            react_1["default"].createElement("script", { src: "/public/js/client.bundle.js" }))));
-};
-exports["default"] = Html;
-
-
-/***/ }),
-
-/***/ "./src/routes/routes.ts":
-/*!******************************!*\
-  !*** ./src/routes/routes.ts ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
-var Html_1 = __webpack_require__(/*! ../containers/Html */ "./src/containers/Html.tsx");
-var App_1 = __webpack_require__(/*! ../containers/App */ "./src/containers/App.tsx");
-var routes = [
-    {
-        component: Html_1["default"],
-        routes: [
-            {
-                path: '/',
-                exact: true,
-                component: App_1["default"]
-            },
-        ]
-    },
-];
-exports["default"] = routes;
-
-
-/***/ }),
-
-/***/ "./src/store/reducer.ts":
-/*!******************************!*\
-  !*** ./src/store/reducer.ts ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
-var reducer = null;
-exports["default"] = reducer;
-
-
-/***/ }),
-
-/***/ "./src/store/store.ts":
-/*!****************************!*\
-  !*** ./src/store/store.ts ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
-var redux_1 = __webpack_require__(/*! redux */ "redux");
-var reducer_1 = __webpack_require__(/*! ./reducer */ "./src/store/reducer.ts");
-console.log('reducer');
-console.log(reducer_1["default"]);
-var PRODUCTION = "development" === 'production';
-var reducerExample = function () {
-    switch (action.type) {
-        case '':
-            return Object.assign({}, state);
-    }
-    return state;
-};
-var configureStore = function () {
-    var middlewares = [];
-    var store = redux_1.createStore(reducerExample, redux_1.applyMiddleware.apply(void 0, middlewares));
-    return store;
-};
-exports["default"] = configureStore;
-
-
-/***/ }),
-
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -248,39 +142,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
-
-/***/ }),
-
-/***/ "react-redux":
-/*!******************************!*\
-  !*** external "react-redux" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-
-/***/ "react-router-config":
-/*!**************************************!*\
-  !*** external "react-router-config" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-config");
-
-/***/ }),
-
-/***/ "redux":
-/*!************************!*\
-  !*** external "redux" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
 
 /***/ })
 

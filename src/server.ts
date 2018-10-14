@@ -1,6 +1,5 @@
 import * as express from 'express'
 import router from './routes/serverRoutes'
-console.log('router: ', router)
 
 const app = express()
 
