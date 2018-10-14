@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=development webpack --progress --colors --watch --mode development --config ./webpack.config.js",
+    "dev": "nodemon ./dist/server.bundle.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,25 @@
   },
   "homepage": "https://github.com/twinemarron/express_react_boilerplate#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "@types/express": "^4.16.0",
+    "@types/react-dom": "^16.0.9",
+    "@types/webpack-env": "^1.13.6",
+    "express": "^4.16.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router-config": "^4.4.0-beta.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "ts-loader": "^5.2.1"
   },
   "devDependencies": {
+    "@types/react": "^16.4.16",
+    "awesome-typescript-loader": "^5.2.1",
+    "nodemon": "^1.18.4",
+    "typescript": "^3.1.1",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
   }
 }
