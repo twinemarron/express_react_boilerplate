@@ -2,24 +2,21 @@ import * as express from 'express'
 
 import * as React from 'react'
 import * as ReactDOMServer from 'react-dom/server'
-console.log(`ReactDOMServer: `, ReactDOMServer)
 
-// import { StaticRouter } from 'react-router-dom'
-// import { renderRoutes } from 'react-router-config'
+import { StaticRouter } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config'
 
-// import routes from './routes'
-
-import * as App from '../containers/App'
+import routes from './routes'
 
 const router = express.Router()
 
 router.get('*', (req, res) => {
+  let context = {}
   ReactDOMServer.renderToNodeStream(
-  <App />,
+    <StaticRouter location={req.url} context={context}>
+      {renderRoutes(routes)}
+    </StaticRouter>
   ).pipe(res)
 })
 
-// router.get('*', (req, res) => {
-//   console.log(`res: `, res)
-// })
 export default router
