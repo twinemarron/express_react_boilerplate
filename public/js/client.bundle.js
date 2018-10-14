@@ -101,9 +101,11 @@ var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
 var react_redux_1 = __webpack_require__(/*! react-redux */ "react-redux");
 var configureStore = __webpack_require__(/*! ./store/store */ "./src/store/store.ts");
 var routes = __webpack_require__(/*! ./routes/routes */ "./src/routes/routes.ts");
-var state = configureStore();
+var state = function () { return configureStore(); };
+var Routes = renderRoutes(routes);
 ReactDOM.hydrate(React.createElement(react_redux_1.Provider, { store: store },
-    React.createElement(BrowserRouter, null, renderRoutes(routes))), document.getElementById('app'));
+    React.createElement(BrowserRouter, null,
+        React.createElement(Routes, null))), document.getElementById('app'));
 
 
 /***/ }),
@@ -118,9 +120,9 @@ ReactDOM.hydrate(React.createElement(react_redux_1.Provider, { store: store },
 "use strict";
 
 exports.__esModule = true;
-var react_1 = __webpack_require__(/*! react */ "react");
+var React = __webpack_require__(/*! react */ "react");
 var App = function (props) {
-    return (react_1["default"].createElement("div", null, "App"));
+    return (React.createElement("div", null, "App"));
 };
 exports["default"] = App;
 
@@ -137,15 +139,15 @@ exports["default"] = App;
 "use strict";
 
 exports.__esModule = true;
-var react_1 = __webpack_require__(/*! react */ "react");
+var React = __webpack_require__(/*! react */ "react");
 var react_router_config_1 = __webpack_require__(/*! react-router-config */ "react-router-config");
 var Html = function (props) {
-    return (react_1["default"].createElement("html", null,
-        react_1["default"].createElement("head", null,
-            react_1["default"].createElement("title", null, "App")),
-        react_1["default"].createElement("body", null,
-            react_1["default"].createElement("div", { id: "app" }, react_router_config_1.renderRoutes(props.route.routes)),
-            react_1["default"].createElement("script", { src: "/public/js/client.bundle.js" }))));
+    return (React.createElement("html", null,
+        React.createElement("head", null,
+            React.createElement("title", null, "App")),
+        React.createElement("body", null,
+            React.createElement("div", { id: "app" }, react_router_config_1.renderRoutes(props.route.routes)),
+            React.createElement("script", { src: "/public/js/client.bundle.js" }))));
 };
 exports["default"] = Html;
 
@@ -164,6 +166,8 @@ exports["default"] = Html;
 exports.__esModule = true;
 var Html_1 = __webpack_require__(/*! ../containers/Html */ "./src/containers/Html.tsx");
 var App_1 = __webpack_require__(/*! ../containers/App */ "./src/containers/App.tsx");
+console.log('Html: ', Html_1["default"]);
+console.log('App: ', App_1["default"]);
 var routes = [
     {
         component: Html_1["default"],

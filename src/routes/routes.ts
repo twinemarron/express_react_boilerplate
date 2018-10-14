@@ -1,5 +1,7 @@
 import Html from '../containers/Html'
 import App from '../containers/App'
+console.log('Html: ', Html)
+console.log('App: ', App)
 
 const routes = [
   {

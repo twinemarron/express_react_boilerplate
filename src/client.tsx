@@ -8,11 +8,14 @@ import { renderRouter } from 'react-router-config'
 
 import * as routes from './routes/routes'
 
-const state = configureStore()
+const state = () => configureStore()
+const Routes = renderRoutes(routes)
 
 ReactDOM.hydrate(
   <Provider store={store}>
-    <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('app')
 )
