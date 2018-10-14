@@ -9,7 +9,7 @@ const Html = props => {
       </head>
       <body>
         <div id="app">{renderRoutes(props.route.routes)}</div>
-        <script src="/public/js/client.bundle.js" />
+        <script src="/js/client.bundle.js" />
       </body>
     </html>
   )

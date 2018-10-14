@@ -147,7 +147,7 @@ var Html = function (props) {
             React.createElement("title", null, "App")),
         React.createElement("body", null,
             React.createElement("div", { id: "app" }, react_router_config_1.renderRoutes(props.route.routes)),
-            React.createElement("script", { src: "/public/js/client.bundle.js" }))));
+            React.createElement("script", { src: "/js/client.bundle.js" }))));
 };
 exports["default"] = Html;
 
@@ -166,8 +166,6 @@ exports["default"] = Html;
 exports.__esModule = true;
 var Html_1 = __webpack_require__(/*! ../containers/Html */ "./src/containers/Html.tsx");
 var App_1 = __webpack_require__(/*! ../containers/App */ "./src/containers/App.tsx");
-console.log('Html: ', Html_1["default"]);
-console.log('App: ', App_1["default"]);
 var routes = [
     {
         component: Html_1["default"],
